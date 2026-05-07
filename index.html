@@ -1,220 +1,124 @@
-  <!DOCTYPE html>
-  <html lang="es">
-  <head>
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Anglo American — Matrícula</title>
+    <title>Anglo American — Sistema de Matrículas</title>
+
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
 
-  <div id="app">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Sora:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
 
-    <!-- ═══ LEFT: FORM ═══════════════════════════════════════════════════════ -->
-    <aside id="panel">
-      <h1>Anglo American Institute</h1>
-      <h2>Fórmula de Admisión</h2>
+    <link rel="stylesheet" href="welcome.css">
+</head>
 
-      <!-- DATOS PERSONALES -->
-      <div class="section-label">Datos del estudiante</div>
+<body>
 
-      <div class="field">
-        <label>Nombre completo del alumno</label>
-        <input type="text" id="f_student_name" placeholder="Jefferson Mora" />
-      </div>
+    <div class="watermark"></div>
 
-      <div class="grid-2">
-        <div class="field">
-          <label>Fecha de nacimiento</label>
-          <input type="date" id="f_birth_date" />
+    <div class="container">
+
+        <div class="topbar">
+
+            <div>
+                <div class="eyebrow">Sistema interno</div>
+                <div style="font-size:28px; font-weight:700;">
+                    Anglo American Institute of Languages
+                </div>
+            </div>
+
+            <div class="badge">
+                Sistema de matrículas CR-Bilingüe
+            </div>
+
         </div>
-        <div class="field">
-          <label>Cédula</label>
-          <input type="text" id="f_student_id" placeholder="1-1922-0905" />
-        </div>
-      </div>
 
-      <div class="grid-2">
-        <div class="field">
-          <label>Tel. Trabajo</label>
-          <input type="text" id="f_work_phone" placeholder="2100-4377" />
-        </div>
-        <div class="field">
-          <label>Celular</label>
-          <input type="text" id="f_cell_phone" placeholder="6174-1114" />
-        </div>
-      </div>
+        <section class="hero">
 
-      <div class="field">
-        <label>E-mail</label>
-        <input type="email" id="f_email" placeholder="correo@ejemplo.com" />
-      </div>
+            <div class="hero-card">
 
-      <div class="grid-2">
-        <div class="field">
-          <label>Ocupación</label>
-          <input type="text" id="f_occupation" placeholder="Estudiante" />
-        </div>
-        <div class="field">
-          <label>Centro de estudios</label>
-          <input type="text" id="f_study_center" placeholder="Liceo del Sur" />
-        </div>
-      </div>
+                <div class="eyebrow">Bienvenido</div>
 
-      <div class="field">
-        <label>Nombre de la empresa</label>
-        <input type="text" id="f_company" placeholder="No aplica" />
-      </div>
+                <h1 class="hero-title">
+                    Sistema de Matrículas Digitales
+                </h1>
 
-      <div class="grid-2">
-        <div class="field">
-          <label>Adecuación curricular</label>
-          <select id="f_adaptation">
-            <option value="SI">Sí</option>
-            <option value="NO">No</option>
-          </select>
-        </div>
-        <div class="field">
-          <label>Especifique</label>
-          <input type="text" id="f_adaptation_detail" placeholder="TDAH leve" />
-        </div>
-      </div>
+                <p class="hero-description">
+                    Bienvenido al sistema interno de matrículas del instituto Anglo American.
+                    Desde este panel podrás gestionar estudiantes, generar fórmulas de admisión,
+                    imprimir comprobantes y llevar el control administrativo de las matrículas.
+                </p>
 
-      <!-- ENCARGADO -->
-      <div class="section-label">Encargado legal</div>
+            </div>
 
-      <div class="field">
-        <label>Nombre del encargado</label>
-        <input type="text" id="f_guardian_name" placeholder="Mariela Mora Rodríguez" />
-      </div>
+            <div class="hero-card selector-card">
 
-      <div class="grid-2">
-        <div class="field">
-          <label>Cédula encargado</label>
-          <input type="text" id="f_guardian_id" placeholder="1-1280-0962" />
-        </div>
-        <div class="field">
-          <label>Teléfono encargado</label>
-          <input type="text" id="f_guardian_phone" placeholder="7194-8136" />
-        </div>
-      </div>
+                <div>
+                    <div class="eyebrow">Acceso</div>
 
-      <!-- CURSO -->
-      <div class="section-label">Curso</div>
+                    <h3>
+                        ¿Quién está utilizando el sistema?
+                    </h3>
 
-      <div class="grid-2">
-        <div class="field">
-          <label>Nombre del curso</label>
-          <input type="text" id="f_course_name" placeholder="Inglés Niños" />
-        </div>
-        <div class="field">
-          <label>Duración (semanas)</label>
-          <input type="number" id="f_duration" placeholder="12" />
-        </div>
-      </div>
+                    <p>
+                        Selecciona tu nombre para continuar dentro del sistema administrativo.
+                    </p>
+                </div>
 
-      <div class="grid-2">
-        <div class="field">
-          <label>Fecha inicio</label>
-          <input type="date" id="f_start_date" />
-        </div>
-        <div class="field">
-          <label>Horario</label>
-          <input type="text" id="f_schedule" placeholder="8:00 AM - 10:00 AM" />
-        </div>
-      </div>
+                <div>
 
-      <div class="field">
-        <label>Lugar</label>
-        <input type="text" id="f_location" placeholder="San José" />
-      </div>
+                    <select class="selector">
+                        <option selected disabled>
+                            Seleccionar usuario
+                        </option>
+                        <option>Jefferson Mora</option>
+                        <option>Gary Mora</option>
+                        <option>Kevin Mora</option>
+                        <option>Shaslin Salazar</option>
+                        <option>Lucía Ruiz</option>
+                        <option>Walter Chinchilla</option>
+                        <option>Donnovan Calero</option>
 
-      <div class="field">
-        <label>Dirección</label>
-        <input type="text" id="f_address" placeholder="San José, Costa Rica" />
-      </div>
+                    </select>
 
-      <!-- PAGO -->
-      <div class="section-label">Condiciones de pago</div>
+                    <button class="btn" onclick="goToSystem()">
+                        Ingresar al sistema
+                    </button>
 
-      <div class="grid-2">
-        <div class="field">
-          <label>Número de pagos</label>
-          <input type="number" id="f_num_payments" placeholder="6" />
-        </div>
-        <div class="field">
-          <label>Monto por pago (₡)</label>
-          <input type="number" id="f_payment_amount" placeholder="20000" />
-        </div>
-      </div>
+                </div>
 
-      <div class="grid-2">
-        <div class="field">
-          <label>Fecha primer pago</label>
-          <input type="date" id="f_first_payment" />
-        </div>
-        <div class="field">
-          <label>Forma de pago matrícula</label>
-          <select id="f_payment_method">
-            <option value="SINPE">SINPE</option>
-            <option value="Efectivo">Efectivo</option>
-            <option value="Transferencia">Transferencia</option>
-          </select>
-        </div>
-      </div>
+            </div>
 
-      <!-- INVERSIÓN -->
-      <div class="section-label">Inversión</div>
+        </section>
 
-      <div class="field">
-        <label>Descuento (%)</label>
-        <input type="text" id="f_discount" placeholder="70%" />
-      </div>
+    </div>
 
-      <div class="grid-2">
-        <div class="field">
-          <label>Matrícula (₡)</label>
-          <input type="number" id="f_reg_fee" placeholder="15000" />
-        </div>
-        <div class="field">
-          <label>Material (₡)</label>
-          <input type="number" id="f_material_fee" placeholder="5000" />
-        </div>
-      </div>
+    <script>
 
-      <div class="field">
-        <label>Mensualidad (₡)</label>
-        <input type="number" id="f_monthly" placeholder="50000" />
-      </div>
+        function goToSystem() {
 
-      <div class="field">
-        <label>Libros (₡)</label>
-        <input type="number" id="f_books" placeholder="7000" />
-      </div>
+            const selector = document.querySelector('.selector');
 
-      <button id="btn-generate" onclick="generate()">
-        ↳ Generar vista previa
-      </button>
-      <button id="btn-print" onclick="window.print()">
-        Imprimir / Guardar PDF
-      </button>
-    </aside>
+            const promoter = selector.value;
 
-    <!-- ═══ RIGHT: PREVIEW ════════════════════════════════════════════════════ -->
-    <main id="preview-area">
-      <div class="preview-label">Vista previa — actualiza al generar</div>
+            if (!promoter || promoter === 'Seleccionar usuario') {
+                alert('Selecciona un usuario');
+                return;
+            }
 
-      <div id="preview-wrapper">
-        <p style="color:#999; text-align:center; padding: 40px 0; font-size:11px;">
-          Completa el formulario y presiona <strong>Generar vista previa</strong>.
-        </p>
-      </div>
-    </main>
+            const encoded = encodeURIComponent(promoter);
 
-  </div>
+            window.location.href = `matricula.html?promoter=${encoded}`;
 
-  <script src="app.js"></script>
-  </body>
-  </html>
+        }
+
+    </script>
+
+</body>
+
+</html>
