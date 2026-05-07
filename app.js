@@ -83,10 +83,11 @@ function generate() {
     materialFee: v('f_material_fee'),
     monthly: v('f_monthly'),
     books: v('f_books'),
+    paymentDate: v('f_payment_date'),
   };
 
   const dp = getDateParts(data.startDate);
-  const fp = getDateParts(data.firstPayment);
+  const fp = getDateParts(data.paymentDate);
 
   const html = `
     <!-- ══ ADMISIÓN ══ -->

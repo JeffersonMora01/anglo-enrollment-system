@@ -215,9 +215,18 @@
       </div>
 
       <div class="field">
-        <label>Libros (₡)</label>
+        <label>Certificado (₡)</label>
         <input type="number" id="f_books" value="7000" placeholder="7000" />
       </div>
+
+      <!-- Fecha de pago -->
+      <div class="section-label">Fecha de pago</div>
+
+      <div class="field">
+        <label>Fecha de pago</label>
+        <input type="date" id="f_payment_date" />
+      </div>
+
 
       <button id="btn-generate" onclick="generate()">
         ↳ Generar vista previa
@@ -226,6 +235,8 @@
         Imprimir / Guardar PDF
       </button>
     </aside>
+
+
 
     <!-- ═══ RIGHT: PREVIEW ════════════════════════════════════════════════════ -->
     <main id="preview-area">
