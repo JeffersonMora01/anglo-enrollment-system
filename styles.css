@@ -1,0 +1,245 @@
+/* ─── Variables ───────────────────────────────────────────────────── */
+:root {
+  --ink: #0f0f0f;
+  --paper: #f7f4ee;
+  --accent: #c8410a;
+  --muted: #888;
+  --border: #d4cfc7;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: 'Sora', sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  margin: 0;
+}
+
+/* ─── Layout ──────────────────────────────────────────────────────── */
+#app {
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  min-height: 100vh;
+}
+
+/* ─── Left panel (form) ───────────────────────────────────────────── */
+#panel {
+  background: var(--ink);
+  color: #fff;
+  padding: 2rem 1.75rem;
+  overflow-y: auto;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+#panel h1 {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.25rem;
+}
+
+#panel h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin: 0 0 1.5rem;
+}
+
+.section-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 1.2rem 0 0.6rem;
+  border-top: 1px solid #2a2a2a;
+  padding-top: 0.7rem;
+}
+
+.field { margin-bottom: 0.6rem; }
+
+.field label {
+  display: block;
+  font-size: 0.68rem;
+  color: #aaa;
+  margin-bottom: 0.2rem;
+  font-weight: 400;
+}
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  background: #1c1c1c;
+  border: 1px solid #333;
+  color: #fff;
+  padding: 0.45rem 0.65rem;
+  border-radius: 4px;
+  font-family: 'Sora', sans-serif;
+  font-size: 0.78rem;
+  outline: none;
+  transition: border 0.2s;
+}
+
+.field input:focus,
+.field select:focus {
+  border-color: var(--accent);
+}
+
+.field select option { background: #1c1c1c; }
+
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; }
+
+#btn-generate {
+  margin-top: 1.4rem;
+  width: 100%;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 0.8rem;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+#btn-generate:hover { opacity: 0.85; }
+
+#btn-print {
+  margin-top: 0.5rem;
+  width: 100%;
+  background: transparent;
+  color: #888;
+  border: 1px solid #333;
+  padding: 0.7rem;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+#btn-print:hover { border-color: #fff; color: #fff; }
+
+/* ─── Right panel (preview) ───────────────────────────────────────── */
+#preview-area {
+  padding: 2rem;
+  overflow-y: auto;
+  background: #e8e4dc;
+}
+
+.preview-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+
+#preview-wrapper {
+  background: #fff;
+  box-shadow: 0 4px 30px rgba(0,0,0,0.12);
+  padding: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  font-size: 10px;
+  font-family: 'Sora', sans-serif;
+  color: #000;
+}
+
+/* ─── Print ───────────────────────────────────────────────────────── */
+@media print {
+  #panel, .preview-label { display: none !important; }
+  #preview-area { padding: 0; background: white; }
+  #preview-wrapper { box-shadow: none; padding: 0; }
+  body { background: white; }
+  #app { display: block; }
+  @page { size: letter; margin: 8mm; }
+}
+
+/* ─── Document / preview styles ───────────────────────────────────── */
+.doc-header { text-align: center; font-weight: 700; line-height: 1.7; margin-bottom: 6px; }
+.doc-row { display: flex; align-items: flex-end; gap: 6px; flex-wrap: wrap; margin-bottom: 3px; }
+.doc-field { border-bottom: 1px solid #000; min-width: 80px; padding: 0 2px; display: inline-block; }
+.doc-label { font-weight: 600; white-space: nowrap; }
+.doc-checkbox { width: 12px; height: 12px; border: 1px solid #000; display: inline-flex; align-items: center; justify-content: center; font-size: 9px; }
+.doc-section-title { font-weight: 700; text-align: center; text-decoration: underline; margin: 8px 0 4px; }
+.doc-divider { border-top: 1px dashed #000; margin: 20px 0 20px; }
+.sig-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 24px; }
+.sig-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 20px; }
+.sig-line { border-bottom: 1px solid #000; min-height: 30px; }
+.sig-label { text-align: center; font-weight: 600; margin-top: 4px; }
+
+#preview-wrapper {
+  background: #fff;
+  box-shadow: 0 4px 30px rgba(0,0,0,0.12);
+  padding: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  font-size: 10px;
+  font-family: 'Sora', sans-serif;
+  color: #000;
+
+  /* NUEVO */
+  position: relative;
+  overflow: hidden;
+}
+
+/* ─── Marca de agua ───────────────────────────── */
+#preview-wrapper::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background-image: url("./Isologo-02.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 420px;
+
+  opacity: 0.10;
+
+  pointer-events: none;
+
+  z-index: 0;
+
+  /* Hace que el negro se vea elegante sin ensuciar */
+  mix-blend-mode: multiply;
+}
+
+/* TODO el contenido arriba de la marca de agua */
+#preview-wrapper > * {
+  position: relative;
+  z-index: 1;
+}
+
+@media print {
+
+  #preview-wrapper::before {
+    content: "" !important;
+
+    position: absolute;
+    inset: 0;
+
+    background-image: url("./Isologo-02.svg") !important;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 420px;
+
+    opacity: 0.10 !important;
+
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+
+    z-index: 0;
+  }
+
+}

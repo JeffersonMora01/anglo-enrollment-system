@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anglo American — Sistema de Matrículas</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Sora:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="welcome.css">
+</head>
+
+<body>
+
+    <div class="watermark"></div>
+
+    <div class="container">
+
+        <div class="topbar">
+
+            <div>
+                <div class="eyebrow">Sistema interno</div>
+                <div style="font-size:28px; font-weight:700;">
+                    Anglo American Institute of Languages
+                </div>
+            </div>
+
+            <div class="badge">
+                Sistema de matrículas CR-Bilingüe
+            </div>
+
+        </div>
+
+        <section class="hero">
+
+            <div class="hero-card">
+
+                <div class="eyebrow">Bienvenido</div>
+
+                <h1 class="hero-title">
+                    Sistema de Matrículas Digitales
+                </h1>
+
+                <p class="hero-description">
+                    Bienvenido al sistema interno de matrículas del instituto Anglo American.
+                    Desde este panel podrás gestionar estudiantes, generar fórmulas de admisión,
+                    imprimir comprobantes y llevar el control administrativo de las matrículas.
+                </p>
+
+            </div>
+
+            <div class="hero-card selector-card">
+
+                <div>
+                    <div class="eyebrow">Acceso</div>
+
+                    <h3>
+                        ¿Quién está utilizando el sistema?
+                    </h3>
+
+                    <p>
+                        Selecciona tu nombre para continuar dentro del sistema administrativo.
+                    </p>
+                </div>
+
+                <div>
+
+                    <select class="selector">
+                        <option selected disabled>
+                            Seleccionar usuario
+                        </option>
+                        <option>Jefferson Mora</option>
+                        <option>Gary Mora</option>
+                        <option>Kevin Mora</option>
+                        <option>Shaslin Salazar</option>
+                        <option>Lucía Ruiz</option>
+                        <option>Walter Chinchilla</option>
+                        <option>Donnovan Calero</option>
+
+                    </select>
+
+                    <button class="btn" onclick="goToSystem()">
+                        Ingresar al sistema
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+    <script>
+
+        function goToSystem() {
+
+            const selector = document.querySelector('.selector');
+
+            const promoter = selector.value;
+
+            if (!promoter || promoter === 'Seleccionar usuario') {
+                alert('Selecciona un usuario');
+                return;
+            }
+
+            const encoded = encodeURIComponent(promoter);
+
+            window.location.href = `index.html?promoter=${encoded}`;
+
+        }
+
+    </script>
+
+</body>
+
+</html>
