@@ -243,3 +243,19 @@ body {
   }
 
 }
+
+@media (max-width: 768px) {
+  #app {
+    display: block;
+  }
+
+  #panel {
+    width: 100%;
+    height: auto;
+    position: static;
+  }
+
+  #preview-area {
+    display: none;
+  }
+}
