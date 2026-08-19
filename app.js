@@ -92,10 +92,10 @@ function generate() {
   const html = `
     <!-- ══ ADMISIÓN ══ -->
     <div class="doc-header">
-      <div>ANGLO AMERICAN INSTITUTE OF LANGUAGES</div>
+      <div>Centro de formación académico y técnico Angloamericano</div>
       <div>Cédula Jurídica: 3-102-771534</div>
       <div>Av. 0 Calle 1ra, Edificio Alde S.A, Piso 6, San José, Costa Rica &nbsp; Tel: 2100-4377</div>
-      <div>FÓRMULA DE ADMISIÓN PROGRAMA CR-BILINGÜE</div>
+      <div>FÓRMULA DE ADMISIÓN</div>
     </div>
 
     <div class="doc-row">
@@ -165,7 +165,7 @@ function generate() {
     </p>
 
     <p style="margin:1px 0; break-inside:avoid;">
-      3. El material didáctico básico podrá ser solicitado por el estudiante entre la primera y segunda lección, únicamente cancelando al encargado de sede pago por adelantado. El material será entregado en la próxima lección.
+      3. El material didáctico básico podrá ser solicitado por el estudiante entre la primera y segunda lección, únicamente cancelando al encargado de sede pago por adelantado. El material (físico o digital) será entregado en la próxima lección.
     </p>
 
     <p style="margin:1px 0; break-inside:avoid;">
@@ -177,23 +177,27 @@ function generate() {
     </p>
 
     <p style="margin:1px 0; break-inside:avoid;">
-      6. Cuatro ausencias injustificadas se tomarán como causa de retiro, no obstante, el saldo adeudado por clases deberá ser cancelado.
+      6. Cuatro ausencias injustificadas se tomarán como causa de retiro, no obstante, el saldo adeudado por clases deberá ser cancelado. <strong>Al firmar este acuerdo el encargado u estudiante se compromete a terminar el nivel, de lo contrario deberá cancelar los meses restantes adeudados.</strong>
     </p>
 
     <p style="margin:1px 0; break-inside:avoid;">
-      7. Los pagos relacionados con el presente curso (mensualidades, recargo, reposición de exámenes, material didáctico, certificados, constancias y certificaciones) se realizan en la sede respectiva; o bien por medio de SINPE al 7205-1035 a nombre del director académico GARY MORA, salvo el derecho de matrícula, el cual puede cobrarse a domicilio, por medio de un funcionario debidamente identificado. Cada alumno conocerá con antelación las fechas de pago.
+      7. Los pagos relacionados con el presente curso (mensualidades, recargo, reposición de exámenes, material didáctico, certificados, constancias y certificaciones) se realizan en la sede respectiva; o bien por medio de SINPE al 7205-1035 a nombre del director académico GARY MORA. Cada alumno conocerá con antelación las fechas de pago.
     </p>
 
     <p style="margin:1px 0; break-inside:avoid;">
-      8. Eventualmente puede haber cambio del instructor profesional, fusión de horarios o reubicación de alumnos, cuando así lo amerite la institución.
+      <strong>8. Los pagos se deben hacer PUNTUALES cada 4 sábados según la fecha que corresponda facilitada por la institución, de no ser así, será motivo para retiro de beca.</strong>
     </p>
 
     <p style="margin:1px 0; break-inside:avoid;">
-      9. Si por alguna razón la persona que ha realizado el trámite de matrícula posteriormente no puede asistir al curso, podrá transferir el derecho de matrícula a un tercero, o bien aplicar el monto al pago de mensualidad. El trámite deberá hacerse por escrito, caso contrario se perderá este derecho.
+      9. Eventualmente puede haber cambio del instructor profesional, fusión de horarios o reubicación de alumnos, cuando así lo amerite la institución.
+    </p>
+
+    <p style="margin:1px 0; break-inside:avoid;">
+      10. Si por alguna razón la persona que ha realizado el trámite de matrícula posteriormente no puede asistir al curso, podrá transferir el derecho de matrícula a un tercero, o bien aplicar el monto al pago de mensualidad. El trámite deberá hacerse por escrito, caso contrario se perderá este derecho.
     </p>
 
     <div class="doc-row" style="margin:1px 0; break-inside:avoid;">
-      <span>10. La inversión en el presente curso, con la aplicación del descuento será de:</span>
+      <span>11. La inversión en el presente curso, con la aplicación del descuento será de:</span>
       ${field(data.discount)}
       <span>desglosado de la siguiente forma:</span>
       <span>Derecho de matrícula:</span> ${field(fmtMoney(data.regFee))}
@@ -203,7 +207,7 @@ function generate() {
     </div>
 
     <p style="margin:1px 0; break-inside:avoid;">
-      11. Código de Vestimenta: Se exigirá a los estudiantes asistir con vestimenta apropiada, no se podrá asistir con escotes muy pronunciados, vestidos muy cortos, croptop, y en caso de hombres, no se podrá asistir con camisa de tirantes ni gorras.
+      12. Código de Vestimenta: Se exigirá a los estudiantes asistir con vestimenta apropiada, no se podrá asistir con escotes muy pronunciados, vestidos muy cortos, croptop, y en caso de hombres, no se podrá asistir con camisa de tirantes ni gorras.
     </p>
 
     </div>
@@ -221,7 +225,7 @@ function generate() {
     <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:8px;">
       <div>
         <div style="font-weight:700; line-height:1.6">
-          ANGLOAMERICAN INSTITUTE OF LANGUAGES<br>COMPROBANTE DE MATRÍCULA
+          Centro de formación académico y técnico Angloamericano<br>COMPROBANTE DE MATRÍCULA
         </div>
         <div class="doc-row" style="margin-top:10px">
           <span class="doc-label">Recibimos de:</span>
